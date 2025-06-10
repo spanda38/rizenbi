@@ -245,7 +245,7 @@ export default function Home() {
           </a>{' '}
           · {' '}
           <a
-            href="https://www.linkedin.com/company/forgemind"
+            href="https://www.linkedin.com/company/forgemindai"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white underline"
