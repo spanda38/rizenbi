@@ -46,6 +46,38 @@ const pilot = [
   "Custom experiment to eliminate one bottleneck in <30 days",
 ];
 
+const team = [
+  {
+    name: "Raghav Gupta",
+    title: "CEO and Co-Founder",
+    image: "/images/raghav.jpg",
+    bio: [
+      "BS CS @ Georgia Tech",
+      "Ex-Amazon SDE",
+      "Worked on ML for Firestick's Content Delivery Network"
+    ]
+  },
+  {
+    name: "Siddhanta Panda",
+    title: "CTO and Co-Founder",
+    image: "/images/siddhanta.jpeg",
+    bio: [
+      "BS/MS ECE @ GTech",
+      "Nvidia Chip Design, Honeywell Flight Control Systems",
+      "Commercial Pilot and Certified Flight Instructor"
+    ]
+  },
+  {
+    name: "Veerkaran Gill",
+    title: "CFO and Co-Founder",
+    image: "/images/veerkaran.jpg",
+    bio: [
+      "BS Finance & Management, UW Seattle",
+      "Ex Private Equity - Gaudium Capital"
+    ]
+  }
+];
+
 /* -------------------------------------------------------------------------- */
 /*                               MAIN COMPONENT                               */
 /* -------------------------------------------------------------------------- */
@@ -192,6 +224,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WHO ARE WE Section */}
+      <section className="py-24 container mx-auto px-6" id="team">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Who Are We?</h2>
+        <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+          {team.map((member, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="bg-white rounded-2xl shadow-lg p-8 text-center"
+            >
+              <img src={member.image} alt={member.name} className="w-24 h-24 mx-auto rounded-full mb-4 object-cover shadow-md" />
+              <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+              <p className="text-sm text-gray-600 mb-4">{member.title}</p>
+              <ul className="text-left list-disc list-inside space-y-1 text-sm text-gray-700">
+                {member.bio.map((line, idx) => (
+                  <li key={idx}>{line}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+        </section>
+
       {/* ── ABOUT & CONSULT ─────────────────────────── */}
       <section
         ref={calendlyRef}
@@ -251,7 +309,11 @@ export default function Home() {
             className="hover:text-white underline"
           >
             LinkedIn
-          </a>
+          </a>{' '}
+          · {' '}
+        <a href="/privacy-policy" className="hover:text-white underline">
+            Privacy Policy
+        </a>
         </p>
         <p className="mt-2">© {new Date().getFullYear()} Forgemind Consulting. All rights reserved.</p>
       </footer>
