@@ -60,7 +60,7 @@ const team = [
   {
     name: "Siddhanta Panda",
     title: "CTO and Co-Founder",
-    image: "/images/siddhanta.jpeg",
+    image: "/images/siddhanta.jpg",
     bio: [
       "BS/MS ECE @ GTech",
       "Nvidia Chip Design, Honeywell Flight Control Systems",
