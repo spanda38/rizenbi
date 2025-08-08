@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /* optional extras — fonts, custom classes … */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;   /* ✅ prevents sideways panning */
+}
