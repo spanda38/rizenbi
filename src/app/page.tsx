@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   Factory,
   AlertTriangle,
+  MoonStar,
   Cpu,
   Users,
   BarChart3,
@@ -21,10 +22,10 @@ import Script from "next/script";
 /* -------------------------------------------------------------------------- */
 
 const problems = [
-  { icon: AlertTriangle, copy: "Downtime hides root-causes and drags OEE." },
+  { icon: AlertTriangle, copy: "Downtime is unpredictable ... Root cause analysis takes time and labor" },
   { icon: Cpu, copy: "Operators wade through thick manuals & tribal knowledge." },
   { icon: BarChart3, copy: "Legacy ERPs ignore real-time shop-floor conditions." },
-  { icon: Users, copy: "New tools stall because they weren’t built for crews." },
+  { icon: Users, copy: "New tools stall because they weren’t built for operators on the factory floor." },
 ];
 
 const phase1 = [
@@ -40,10 +41,17 @@ const phase2 = [
   "Grows smarter over time—no consultants needed",
 ];
 
+const phase3 = [
+  "Autonomous machine-to-machine coordination",
+  "Zero-light, zero-operator production shifts",
+  "Self-healing maintenance windows scheduled by AI",
+  "No more human intervention only monitoring needed!"
+]
+
 const pilot = [
   "Free 1-hour call + optional on-site walk-through",
   "Factory-specific diagnostic on downtime & planning gaps",
-  "Custom experiment to eliminate one bottleneck in <30 days",
+  "Custom experiment to eliminate one bottleneck in < 30 days",
 ];
 
 const team = [
@@ -85,6 +93,7 @@ const team = [
 export default function Home() {
   // Calendly section ref for smooth scrolling
   const calendlyRef = useRef<HTMLElement | null>(null);
+  const forgebridgeRef  = useRef<HTMLElement | null>(null); 
 
   // Optional popup (kept from original code in case you need it later)
   const [popupOpen, setPopupOpen] = useState(false);
@@ -95,6 +104,10 @@ export default function Home() {
   const scrollToCalendly = () => {
     calendlyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  
+  const scrollToForgebridge = () => {
+    forgebridgeRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <main className="font-sans text-gray-900 bg-gray-50">
@@ -104,31 +117,44 @@ export default function Home() {
         strategy="lazyOnload"
       />
 
-      {/* ── HERO ─────────────────────────────────────── */}
-      <section className="relative flex flex-col items-center justify-center h-[85vh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white text-center px-6 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(at_top_left,rgba(255,255,255,0.08)_0,transparent_70%)]" />
+      {/* ── WELCOME BANNER ───────────────────────────────────── */}
+      <section className="relative flex flex-col items-center justify-center h-[55vh] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-white text-center px-6 overflow-hidden">
+        {/* soft radial glow in top-left */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(at_top_left,rgba(255,255,255,0.10)_0,transparent_70%)]" />
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight max-w-5xl"
+          className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight"
         >
-          Bring Us Your Toughest Factory-Floor Problem.
-          <br className="hidden md:block" />
-          We’ll Uncover the Quickest Win—Free.
+          Welcome&nbsp;to&nbsp;Forgemind
         </motion.h1>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-semibold max-w-4xl"
+        >
+          The AI&nbsp;Companion Layer&nbsp;That&nbsp;Learns&nbsp;From&nbsp;Your&nbsp;Factory
+        </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-6 text-lg sm:text-2xl max-w-3xl"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-6 text-lg sm:text-xl max-w-3xl leading-relaxed"
         >
-          We’re a small, battle-tested team of engineers offering a no-cost discovery sprint to diagnose your bottlenecks and surface low-risk improvements.
+          We start as an AI layer on top of your existing&nbsp;ERP, IoT, and PLC data.
+          <br className="hidden sm:inline" />
+          Soon we become <strong>the brain of the factory.</strong>
         </motion.p>
+        {/* CTA button (unchanged) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
           className="mt-10"
         >
           <Button
@@ -136,9 +162,67 @@ export default function Home() {
             className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700 shadow-lg"
             onClick={scrollToCalendly}
           >
-            🗓 Book a Free Discovery Call
+            🗓 Book&nbsp;a&nbsp;Free&nbsp;Discovery&nbsp;Call
           </Button>
         </motion.div>
+      </section>
+
+
+      {/* ── CTA HERO ─────────────────────────────────────── */}
+      <section className="relative flex flex-col items-center justify-center h-[70vh] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-white text-center px-6 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(at_bottom_right,rgba(255,255,255,0.06)_0,transparent_70%)]" />
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-balance max-w-4xl"
+        >
+          <span className="text-amber-400">Bring&nbsp;us&nbsp;your&nbsp;toughest</span><br />
+          factory-floor problem
+        </motion.h1>
+
+        {/* Sub-headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-semibold text-balance max-w-3xl"
+        >
+          We’ll uncover a&nbsp;
+          <span className="underline decoration-amber-400 decoration-4 underline-offset-4">
+            quick&nbsp;win — free
+          </span>.
+        </motion.h2>
+
+        {/* Body copy */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-6 text-lg sm:text-2xl max-w-2xl leading-relaxed"
+        >
+          A battle-tested crew of engineers will run a no-cost discovery sprint to
+          surface bottlenecks and low-risk improvements.
+        </motion.p>
+
+        {/* CTA button (unchanged) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mt-10"
+        >
+          <Button
+            size="lg"
+            className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700 shadow-lg"
+            onClick={scrollToForgebridge}
+          >
+            Learn about Forgebridge!
+          </Button>
+        </motion.div>
+
       </section>
 
       {/* ── PROBLEM ─────────────────────────────────── */}
@@ -165,10 +249,11 @@ export default function Home() {
       <section className="bg-white py-24" id="vision">
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">Where We’re Headed</h2>
-          <div className="grid gap-12 md:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {[
               { title: "Phase 1: Smarter Layer", icon: BrainCircuit, bullets: phase1 },
               { title: "Phase 2: AI-Native ERP", icon: Factory, bullets: phase2 },
+              { title: "Phase 3: Dark Manufacturing", icon: MoonStar, bullets: phase3 },
             ].map(({ title, icon: Icon, bullets }, idx) => (
               <motion.div
                 key={idx}
@@ -191,6 +276,107 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── FORGEBRIDGE ────────────────────────── */}
+      <section id="forgebridge" ref={forgebridgeRef} className="bg-slate-900 text-white py-24 px-6">
+        <h2 className="text-center text-5xl sm:text-6xl font-extrabold mb-10">
+          <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+            ForgeBridge
+          </span>{" "}
+          — Your Machine’s AI Co-Pilot
+        </h2>
+
+        <p className="mx-auto max-w-4xl text-lg text-center mb-16 leading-relaxed">
+          ForgeBridge is our signature tool that <strong>plugs into any PLC
+          or IoT stack already on your factory floor</strong>. Our agentic brain ingests live telemetry,
+          historical logs, and OEM manuals to run <em>intelligent diagnostic loops</em>,
+          solve issues autonomously, and chat with operators in plain English—no rip-and-replace,
+          no custom middleware, no six-month onboarding.
+        </p>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {[
+            [
+              "Plug-and-Play Protocol Tap",
+              "OPC-UA, Modbus, CAN, MTConnect, REST—if your asset speaks it, ForgeBridge understands it."
+            ],
+            [
+              "AI Diagnostic Loops",
+              "Learns from manuals + past failures, isolates root-cause in real time, and self-executes fixes when safe."
+            ],
+            [
+              "Operator Chat & Alerts",
+              "Instant WhatsApp-style guidance, task confirmations, and KPI push-notes at the line or in the break room."
+            ],
+            [
+              "Minutes, Not Months",
+              "New hires become effective operators on day one—training shrinks from weeks to minutes."
+            ],
+            [
+              "Asset-Agnostic Workforce",
+              "Any operator can run any machine, regardless of brand or generation—true cross-skilling."
+            ],
+            [
+              "Shop-Floor ERP Feeds",
+              "Pushes part counts, downtime, and completed work orders straight into your ERP/ ... ERPs aren’t just for managers now."
+            ],
+          ].map(([title, copy]) => (
+            <div
+              key={title}
+              className="rounded-xl border border-slate-700/60 p-6 backdrop-blur-lg hover:border-amber-400 transition"
+            >
+              <h3 className="mb-2 text-xl font-semibold text-amber-400">{title}</h3>
+              <p className="text-slate-300">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
+      {/* ── FORGEBRIDGE IN ACTION ───────────────────────── */}
+      <section id="forgebridge-demo" className="mt-24 space-y-14 px-6 text-neutral-200">
+        {/* Title — keep site-wide colour scheme */}
+        <h2 className="text-center text-4xl sm:text-5xl font-extrabold text-amber-400">
+          Watch ForgeBridge&nbsp;in&nbsp;Action
+        </h2>
+
+        {/* Video frame (unchanged) */}
+        <div className="flex justify-center">
+          <div className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/fS2PZE7l258?rel=0&modestbranding=1"
+              title="ForgeBridge Live Demo – Delhi → Mumbai A320 Engine-Failure Scenario"
+              className="absolute inset-0 h-full w-full"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
+        {/* Narrative — darker text for readability */}
+        <div className="space-y-8 text-neutral-800 sm:text-neutral-700 lg:text-neutral-600">
+          <p className="mx-auto max-w-4xl text-lg leading-relaxed">
+            In this 13-minute capture, <strong>ForgeBridge taps directly into an Airbus A320-neo’s
+            SimConnect bus</strong> during a Delhi → Mumbai sector. Mid-cruise, Engine 1’s&nbsp;N1
+            drops below idle. ForgeBridge’s on-edge agent detects the anomaly, executes the QRH
+            “ENG 1 RELIGHT” sequence autonomously, and then launches a full diagnostic loop.
+          </p>
+
+          <ul className="mx-auto max-w-3xl list-disc list-inside space-y-2">
+            <li><strong>Root-cause in &lt; 8 s</strong> – correlates N1, EGT &amp; fuel-flow to confirm relight.</li>
+            <li><strong>MCC hand-off</strong> – pushes log + graph + recommended parts to the maintenance control centre.</li>
+            <li><strong>Boroscope assist</strong> – guides the on-call engineer through an N1 turbine inspection.</li>
+          </ul>
+
+          <p className="mx-auto max-w-4xl text-lg leading-relaxed">
+            The same loop can wrap itself around <em>any</em> industrial asset—CNC, SMT line, extrusion press—
+            because ForgeBridge speaks OPC-UA, Modbus, CAN, MTConnect and legacy serial. By turning each PLC
+            into an <strong>agentic co-pilot</strong>, we slash operator onboarding, let machines negotiate
+            tasks with one another, and march toward truly lights-out manufacturing.
+          </p>
+        </div>
+      </section>
+
 
       {/* ── OFFER ───────────────────────────────────── */}
       <section className="py-24 container mx-auto px-6" id="offer">
