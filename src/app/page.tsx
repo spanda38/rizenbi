@@ -126,7 +126,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight"
+          className="text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-tight"
         >
           Welcome&nbsp;to&nbsp;Forgemind
         </motion.h1>
@@ -135,7 +135,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-semibold max-w-4xl"
+          className="mt-4 text-xl sm:text-3xl lg:text-4xl font-semibold max-w-4xl"
         >
           The AI&nbsp;Companion Layer&nbsp;That&nbsp;Learns&nbsp;From&nbsp;Your&nbsp;Factory
         </motion.h2>
@@ -188,7 +188,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-semibold text-balance max-w-3xl"
+          className="mt-4 text-xl sm:text-3xl lg:text-4xl font-semibold text-balance max-w-3xl"
         >
           We’ll uncover a&nbsp;
           <span className="underline decoration-amber-400 decoration-4 underline-offset-4">
