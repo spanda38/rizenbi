@@ -251,7 +251,7 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">Where We’re Headed</h2>
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Phase 1: Smarter Layer", icon: BrainCircuit, bullets: phase1 },
+              { title: "Phase 1: The Mouth on a Machine", icon: BrainCircuit, bullets: phase1 },
               { title: "Phase 2: AI-Native ERP", icon: Factory, bullets: phase2 },
               { title: "Phase 3: Dark Manufacturing", icon: MoonStar, bullets: phase3 },
             ].map(({ title, icon: Icon, bullets }, idx) => (
