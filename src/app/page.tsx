@@ -3,6 +3,8 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 import {
   Brain,
   Calculator,
@@ -24,7 +26,7 @@ import Script from "next/script";
 /*                          RIZENBI — SITE CONSTANTS                           */
 /* -------------------------------------------------------------------------- */
 
-const BRAND = "Rizenbi Abacus & Vedic Math";
+const BRAND = "Rizenbi Abacus Learning Centre";
 const TAGLINE =
   "Build lightning-fast mental math, laser focus, and confidence — for kids 5–14 (Abacus) and grades 6–12 (Vedic Math).";
 
@@ -115,100 +117,141 @@ export default function RizenbiLanding() {
 
       {/* ── PROGRAMS ─────────────────────────────────── */}
       <section id="programs" className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold">Programs</h2>
-          <p className="mt-2 text-gray-600">Pick the path that fits your child’s age and goals.</p>
+        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: text + cards */}
+          <div>
+            <h2 className="text-3xl font-bold">Programs</h2>
+            <p className="mt-2 text-gray-600">Pick the path that fits your child’s age and goals.</p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <Card className="hover:shadow-lg transition">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3">
-                  <Brain />
-                  <h3 className="text-xl font-semibold">Abacus (Ages 5–14)</h3>
-                </div>
-                <ul className="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
-                  <li>Levels 1–8 with progressive skill-building</li>
-                  <li>Visualization & concentration through the soroban</li>
-                  <li>Addition, subtraction, multiplication, division — mentally</li>
-                </ul>
-                <div className="mt-4 text-xs text-gray-500">Weekly classes · Assessments · Certificates</div>
-              </CardContent>
-            </Card>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
+              <Card className="hover:shadow-lg transition">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3">
+                    <Brain />
+                    <h3 className="text-xl font-semibold">Abacus (Ages 5–14)</h3>
+                  </div>
+                  <ul className="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
+                    <li>Levels 1–8 with progressive skill-building</li>
+                    <li>Visualization & concentration through the soroban</li>
+                    <li>Addition, subtraction, multiplication, division — mentally</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">Weekly classes · Assessments · Certificates</div>
+                </CardContent>
+              </Card>
 
-            <Card className="hover:shadow-lg transition">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3">
-                  <Calculator />
-                  <h3 className="text-xl font-semibold">Vedic Math (Grades 6–12)</h3>
-                </div>
-                <ul className="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
-                  <li>4-digit, 20-row addition & subtraction — all mental</li>
-                  <li>Rapid multiplication, division, squaring & more</li>
-                  <li>Confidence for school & competitions</li>
-                </ul>
-                <div className="mt-4 text-xs text-gray-500">Short intensive modules · Speed benchmarks</div>
-              </CardContent>
-            </Card>
+              <Card className="hover:shadow-lg transition">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3">
+                    <Calculator />
+                    <h3 className="text-xl font-semibold">Vedic Math (Grades 6–12)</h3>
+                  </div>
+                  <ul className="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
+                    <li>4-digit, 20-row addition & subtraction — all mental</li>
+                    <li>Rapid multiplication, division, squaring & more</li>
+                    <li>Confidence for school & competitions</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">Short intensive modules · Speed benchmarks</div>
+                </CardContent>
+              </Card>
 
-            <Card className="hover:shadow-lg transition">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3">
-                  <Users />
-                  <h3 className="text-xl font-semibold">Delivery</h3>
-                </div>
-                <ul className="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
-                  <li>In-person: Serving the Research Triangle, Raleigh, Durham </li>
-                  <li>Online</li>
-                  <li>Flexible class preferences</li>
-                </ul>
-                <div className="mt-4 text-xs text-gray-500">Small groups · Individual attention</div>
-              </CardContent>
-            </Card>
+              <Card className="hover:shadow-lg transition lg:col-span-2">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3">
+                    <Users />
+                    <h3 className="text-xl font-semibold">Delivery</h3>
+                  </div>
+                  <ul className="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
+                    <li>In-person: Serving the Research Triangle, Raleigh, Durham</li>
+                    <li>Online</li>
+                    <li>Flexible class preferences</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">Small groups · Individual attention</div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Right: image */}
+          <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/course/pexels-cottonbro-3662635.jpg"
+              alt="Children learning abacus and math"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
 
       {/* ── BENEFITS ─────────────────────────────────── */}
       <section id="benefits" className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold">Why Parents Choose Rizenbi</h2>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: <Sparkles />, title: "Lightning-fast Math", text: "Calculate in seconds, often faster than a calculator." },
-              { icon: <Zap />, title: "Instant Results", text: "Noticeable improvement within the first few weeks." },
-              { icon: <ShieldCheck />, title: "Money-Back Guarantee", text: "Full refund if you’re not satisfied after the first month." },
-              { icon: <Brain />, title: "Focus & Memory", text: "Boost concentration, listening skills, and retention." },
-              { icon: <Users />, title: "Trust & Reliability", text: "Experienced and Extremely qualified coaches, consistent outcomes" },
-              { icon: <Clock />, title: "Exam Speed", text: "Timed drills improve speed without sacrificing accuracy." },
-              { icon: <Star />, title: "Creativity", text: "Abacus visualization enhances both hemispheres of the brain." },
-            ].map((b, i) => (
-              <Card key={i} className="hover:shadow-md transition">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3">
-                    {b.icon}
-                    <h3 className="text-lg font-semibold">{b.title}</h3>
-                  </div>
-                  <p className="mt-2 text-sm text-gray-700">{b.text}</p>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: image */}
+          <div className="relative h-[350px] w-full rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/method/pexels-august-de-richelieu-4260325.jpg"
+              alt="Kids practicing together"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Right: cards */}
+          <div>
+            <h2 className="text-3xl font-bold">Why Parents Choose Rizenbi</h2>
+            <div className="mt-8 grid sm:grid-cols-2 gap-6">
+              {[
+                { icon: <Sparkles />, title: "Lightning-fast Math", text: "Calculate in seconds, often faster than a calculator." },
+                { icon: <Zap />, title: "Instant Results", text: "Noticeable improvement within the first few weeks." },
+                { icon: <ShieldCheck />, title: "Money-Back Guarantee", text: "Full refund if you’re not satisfied after the first month." },
+                { icon: <Brain />, title: "Focus & Memory", text: "Boost concentration, listening skills, and retention." },
+                { icon: <Users />, title: "Trust & Reliability", text: "Experienced and extremely qualified coaches, consistent outcomes." },
+                { icon: <Clock />, title: "Exam Speed", text: "Timed drills improve speed without sacrificing accuracy." },
+                { icon: <Star />, title: "Creativity", text: "Abacus visualization enhances both hemispheres of the brain." },
+              ].map((b, i) => (
+                <Card key={i} className="hover:shadow-md transition">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3">
+                      {b.icon}
+                      <h3 className="text-lg font-semibold">{b.title}</h3>
+                    </div>
+                    <p className="mt-2 text-sm text-gray-700">{b.text}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── SCHEDULE (NO FIXED TIMES) ────────────────── */}
       <section id="schedule" className="py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold">Schedule</h2>
-          <p className="mt-2 text-gray-600">We offer flexible class preferences to fit your family’s schedule.</p>
-          <Card className="mt-8">
-            <CardContent className="p-6 text-sm text-gray-700">
-              Instead of rigid timings, we coordinate convenient sessions with parents.
-              Available in-person in Raleigh–Durham and online across the USA.
-            </CardContent>
-          </Card>
+        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: text */}
+          <div>
+            <h2 className="text-3xl font-bold">Schedule</h2>
+            <p className="mt-2 text-gray-600">We offer flexible class preferences to fit your family’s schedule.</p>
+            <Card className="mt-8">
+              <CardContent className="p-6 text-sm text-gray-700">
+                Instead of rigid timings, we coordinate convenient sessions with parents.
+                Available in-person in Raleigh–Durham and online across the US.
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right: image */}
+          <div className="relative h-[300px] w-full rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/levels/gautam-arora-OVDtgUhUPBY-unsplash.jpg"
+              alt="Student writing during class"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
+
 
       {/* ── BOOK DEMO (CALENDLY) ─────────────────────── */}
       <section id="book-demo" ref={calendlyRef} className="py-16 bg-white">
