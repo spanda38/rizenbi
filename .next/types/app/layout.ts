@@ -1,4 +1,4 @@
-// File: C:\Users\19282\Desktop\Speculit...Fiydaa\ForgeMind\project_forgemind\src\app\layout.tsx
+// File: C:\Users\19282\Desktop\BravoGlow\Rizenbi\rizenbi_rematch\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

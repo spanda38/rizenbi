@@ -1,20 +1,19 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import Script from "next/script";
+import Header from "@/components/Header"; // ✅ make sure this path resolves
 
-export const metadata: Metadata = {
-  title: "Forgemind Consulting",
-  description:
-    "Revolutionizing mid-sized factories with hands-on AI, automation, and lean systems. Precision engineering meets floor-level execution.",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-50 text-gray-900 font-sans">{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body>
+        {/* Load Calendly once, site-wide */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
+        <Header />   {/* ✅ this prints the header on every page */}
+        {children}
+      </body>
     </html>
   );
 }
