@@ -237,7 +237,7 @@ const Benefits = () => {
               <div className="text-muted-foreground">Satisfaction Rate</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl lg:text-4xl font-bold text-success">5+</div>
+              <div className="text-3xl lg:text-4xl font-bold text-success">25+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
             <div className="space-y-2">
