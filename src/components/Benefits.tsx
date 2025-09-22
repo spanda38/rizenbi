@@ -90,7 +90,7 @@ const Benefits = () => {
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Join thousands of families who've discovered the power of mental math mastery 
-            through our Kumon-inspired teaching methods.
+            through our teaching methods.
           </p>
         </div>
 
