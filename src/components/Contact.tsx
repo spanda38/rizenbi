@@ -193,7 +193,7 @@ const Contact = () => {
                             type="tel"
                             value={formData.phone}
                             onChange={handleChange}
-                            placeholder="+1 (984) 363-6626"
+                            placeholder="+91 9818565419"
                             required
                             className="border-input focus:border-primary"
                           />

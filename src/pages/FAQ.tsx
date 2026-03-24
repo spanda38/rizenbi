@@ -242,9 +242,9 @@ const FAQ = () => {
               size="lg" 
               variant="outline"
               className="text-lg px-8"
-              onClick={() => window.location.href = 'tel:+19843636626'}
+              onClick={() => window.location.href = 'tel:+919818565419'}
             >
-              Call +1 (984) 363-6626
+              Call +91 9818565419
             </Button>
           </div>
         </div>
@@ -287,7 +287,7 @@ const FAQ = () => {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-background/80">
-                <li>+1 (984) 363-6626</li>
+                <li>+91 9818565419</li>
                 <li>rizenbiusa@gmail.com</li>
                 <li>Raleigh-Durham, NC</li>
                 <li>Online Classes Available</li>

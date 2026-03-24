@@ -83,10 +83,10 @@ const CalendlyBooking = ({ className }: CalendlyBookingProps) => {
               </a>{" "}
               or call{" "}
               <a 
-                href="tel:+19843636626" 
+                href="tel:+919818565419" 
                 className="text-primary hover:underline font-medium"
               >
-                +1 (984) 363-6626
+                +91 9818565419
               </a>
             </p>
           </div>

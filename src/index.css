@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Kumon-inspired Learning Center Design System */
+/* Rizenbi Learning Center Design System */
 
 @layer base {
   :root {
@@ -18,7 +18,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 14%;
 
-    /* Kumon Blue - Primary Brand Color */
+    /* Rizenbi Blue - Primary Brand Color */
     --primary: 211 100% 43%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 211 100% 88%;
